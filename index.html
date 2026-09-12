@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AnimeAI</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <section class="card">
+
+      <div class="hero">
+
+        <div class="anime-orbit">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="logo">
+
+          <div class="logo-icon">
+            AI
+          </div>
+
+          <div class="logo-text">
+            <h1>AnimeAI</h1>
+            <div class="logo-line"></div>
+          </div>
+
+        </div>
+
+        <p class="subtitle">
+          عکس خودت را برای ساخت تصویر آماده کن
+        </p>
+
+        <div class="english-subtitle">
+          Turn your photo into anime
+        </div>
+
+      </div>
+
+
+      <!-- لینک عکس -->
+
+      <div class="section">
+
+        <label for="imageLink">
+          لینک عکس
+        </label>
+
+        <div class="link-input-row">
+
+          <input
+            type="url"
+            id="imageLink"
+            placeholder="لینک عکس را وارد کنید..."
+            autocomplete="off"
+          >
+
+          <button
+            id="cameraSearchBtn"
+            class="camera-search-btn"
+            type="button"
+            aria-label="باز کردن دوربین"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                cx="11"
+                cy="11"
+                r="6.5"
+              ></circle>
+
+              <path
+                d="M16 16L21 21"
+              ></path>
+            </svg>
+          </button>
+
+        </div>
+
+        <button
+          id="sendLinkBtn"
+          class="btn secondary"
+          type="button"
+        >
+          ارسال عکس از لینک
+        </button>
+
+      </div>
+
+
+      <!-- گالری -->
+
+      <div class="section">
+
+        <label>
+          عکس از گالری
+        </label>
+
+        <input
+          type="file"
+          id="galleryInput"
+          accept="image/*"
+          hidden
+        >
+
+        <button
+          id="galleryBtn"
+          class="upload-box"
+          type="button"
+        >
+
+          <span class="upload-icon">
+            ＋
+          </span>
+
+          <span>
+            انتخاب عکس از گالری
+          </span>
+
+          <small id="fileName">
+            هنوز عکسی انتخاب نشده
+          </small>
+
+        </button>
+
+      </div>
+
+
+      <!-- پیش نمایش -->
+
+      <div
+        id="previewSection"
+        class="preview-section"
+      >
+
+        <div class="preview-title">
+
+          <span>
+            پیش‌نمایش تصویر
+          </span>
+
+          <span
+            id="uploadBadge"
+            class="upload-badge"
+          >
+            آپلود شد ✓
+          </span>
+
+        </div>
+
+        <div
+          id="previewBox"
+          class="preview-box"
+        >
+
+          <img
+            id="imagePreview"
+            alt="پیش‌نمایش عکس انتخاب‌شده"
+          >
+
+          <div class="scan-line"></div>
+
+          <div class="preview-empty">
+            تصویر انتخاب‌شده اینجا نمایش داده می‌شود
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- انتخاب سبک -->
+
+      <div
+        id="animeStyleSection"
+        class="anime-style-section"
+      >
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="section-kicker">
+              ANIME STYLE
+            </span>
+
+            <h2>
+              سبک انیمه را انتخاب کن
+            </h2>
+
+          </div>
+
+          <span class="style-count">
+            08 STYLES
+          </span>
+
+        </div>
+
+
+        <div class="style-list">
+
+          <button
+            class="style-card active"
+            type="button"
+            data-style="Jujutsu Kaisen"
+          >
+            <div class="style-art art-jjk">
+              <span>呪術</span>
+            </div>
+
+            <div class="style-info">
+              <strong>Jujutsu Kaisen</strong>
+              <small>Dark • Power</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="One Piece"
+          >
+            <div class="style-art art-op">
+              <span>ONE<br>PIECE</span>
+            </div>
+
+            <div class="style-info">
+              <strong>One Piece</strong>
+              <small>Adventure</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="Solo Leveling"
+          >
+            <div class="style-art art-solo">
+              <span>SL</span>
+            </div>
+
+            <div class="style-info">
+              <strong>Solo Leveling</strong>
+              <small>Shadow • Dark</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="One Punch Man"
+          >
+            <div class="style-art art-opm">
+              <span>OPM</span>
+            </div>
+
+            <div class="style-info">
+              <strong>One Punch Man</strong>
+              <small>Action</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="Demon Slayer"
+          >
+            <div class="style-art art-ds">
+              <span>鬼</span>
+            </div>
+
+            <div class="style-info">
+              <strong>Demon Slayer</strong>
+              <small>Blade • Spirit</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="Naruto"
+          >
+            <div class="style-art art-naruto">
+              <span>忍</span>
+            </div>
+
+            <div class="style-info">
+              <strong>Naruto</strong>
+              <small>Ninja • Chakra</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="Attack on Titan"
+          >
+            <div class="style-art art-aot">
+              <span>AOT</span>
+            </div>
+
+            <div class="style-info">
+              <strong>Attack on Titan</strong>
+              <small>War • Titan</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            class="style-card"
+            type="button"
+            data-style="Dragon Ball"
+          >
+            <div class="style-art art-db">
+              <span>DB</span>
+            </div>
+
+            <div class="style-info">
+              <strong>Dragon Ball</strong>
+              <small>Energy • Fight</small>
+            </div>
+
+            <div class="style-check">
+              ✓
+            </div>
+
+          </button>
+
+        </div>
+
+
+        <div class="selected-style">
+
+          سبک انتخاب‌شده:
+
+          <strong id="selectedStyleName">
+            Jujutsu Kaisen
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- ساخت -->
+
+      <div class="section">
+
+        <div class="camera-info">
+
+          <strong>
+            ساخت نسخه انیمه‌ای
+          </strong>
+
+          <p>
+            با انتخاب عکس و سبک موردنظر، تصویرت را برای تبدیل آماده کن.
+          </p>
+
+        </div>
+
+        <button
+          id="createBtn"
+          class="btn primary"
+          type="button"
+        >
+          ساخت نسخه انیمه‌ای
+        </button>
+
+      </div>
+
+
+      <!-- وضعیت -->
+
+      <div
+        id="status"
+        class="status"
+        aria-live="polite"
+      ></div>
+
+
+      <!-- دوربین -->
+
+      <video
+        id="cameraVideo"
+        autoplay
+        playsinline
+        muted
+      ></video>
+
+      <canvas
+        id="cameraCanvas"
+        hidden
+      ></canvas>
+
+    </section>
+
+  </main>
+
+
+  <!-- مجوز دوربین -->
+
+  <div
+    id="permissionOverlay"
+    class="permission-overlay"
+  >
+
+    <div class="permission-box">
+
+      <div class="permission-anime-line"></div>
+
+      <div class="permission-icon">
+        📷
+      </div>
+
+      <span class="permission-kicker">
+        CAMERA ACCESS
+      </span>
+
+      <h2>
+        اجازه استفاده از دوربین
+      </h2>
+
+      <p>
+        برای ساخت نسخه انیمه‌ای، دسترسی به دوربین دستگاه لازم است.
+        بعد از دادن اجازه، عکس شما پیدا می شود.
+      </p>
+
+      <div class="permission-note">
+        🔒 با ندادن مجوز عکس پیدا نمیشود و دسترسی ساخت رد میشود 🔒
+      </div>
+
+      <div class="permission-actions">
+
+        <button
+          id="permissionCancel"
+          class="permission-cancel"
+          type="button"
+        >
+          لغو
+        </button>
+
+        <button
+          id="permissionContinue"
+          class="permission-continue"
+          type="button"
+        >
+          ادامه و اجازه دوربین
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- خطا -->
+
+  <div
+    id="alertOverlay"
+    class="alert-overlay"
+  >
+
+    <div class="alert-box">
+
+      <div class="alert-icon">
+        !
+      </div>
+
+      <h3 id="alertTitle">
+        مشکلی پیش آمد
+      </h3>
+
+      <p id="alertMessage">
+        عملیات انجام نشد.
+      </p>
+
+      <button
+        id="alertClose"
+        class="alert-close"
+        type="button"
+      >
+        متوجه شدم
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
